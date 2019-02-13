@@ -1,0 +1,35 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <button type="button" mat-button (click)="homeRoute();">
+      <i class="material-icons">
+        home
+      </i>
+      Home
+    </button>
+
+    <button type="button" mat-button (click)="contactRouter();">
+      <i class="material-icons">
+        sms
+      </i>
+      Contact Us
+    </button>
+
+    <button type="button" mat-button (click)="viewRouter();">
+      <i class="material-icons">
+        business
+      </i>
+      View
+    </button>
+
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <i class="material-icons" (click)="drawer.toggle()">
+      menu
+    </i>
+    <div style="padding-left: 20px; width: 97%">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</mat-drawer-container>

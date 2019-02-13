@@ -1,0 +1,28 @@
+.example-container {
+    min-width: 100px;
+    min-height: 200px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+  
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    i {
+        cursor: pointer;
+    }
+}
+  
+.example-sidenav {
+    padding: 20px;
+    flex-direction: column;
+    button {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+}
+  

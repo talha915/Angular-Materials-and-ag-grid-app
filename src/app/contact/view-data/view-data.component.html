@@ -1,0 +1,22 @@
+<h1>
+  View
+</h1>
+
+<div class="row" *ngIf="rowData.length > 0">
+  <div class="col-md-12">
+      <ag-grid-angular 
+        style="min-width: 800px; min-height: 500px;" 
+        class="ag-theme-balham" 
+        [rowData]="rowData" 
+        [columnDefs]="columnDefs">
+    </ag-grid-angular>
+  </div>
+</div>
+
+<div class="row" *ngIf="rowData.length === 0">
+  <div class="col-md-12">
+    <h2>
+      No Data Found
+    </h2>
+  </div>
+</div>

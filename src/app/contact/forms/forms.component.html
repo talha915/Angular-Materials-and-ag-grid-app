@@ -1,0 +1,51 @@
+<form [formGroup]="formGroup" class="formgroup">
+  <mat-form-field>
+    <input matInput placeholder="Name" formControlName="name" required>
+    <mat-error *ngIf="!formGroup.controls['name'].valid && formGroup.controls['name'].touched">
+      Name is
+      <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Email" formControlName="email" for="email" required>
+    <mat-error *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched">
+      Email is
+      <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="DOB" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="!formGroup.controls['DOB'].valid && formGroup.controls['DOB'].touched">
+      Date is
+      <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+
+  <mat-radio-group formControlName="Gender">
+    Gender:
+    <mat-radio-button value="1">Male</mat-radio-button>
+    <mat-radio-button value="2">Female</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Comments" formControlName="comments" required></textarea>
+    <mat-error *ngIf="!formGroup.controls['comments'].valid && formGroup.controls['comments'].touched">
+      Comments are
+      <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" type="submit" class="button" [disabled]="!formGroup.valid" (click)="submitData()">Submit Form</button>
+</form>
+
+<!-- <div class="row" *ngIf="sendData">
+  <div class="col-md-9"> -->
+
+<!-- </div>
+</div> -->
+
